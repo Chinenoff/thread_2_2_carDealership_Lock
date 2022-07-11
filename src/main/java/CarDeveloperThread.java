@@ -1,9 +1,9 @@
 public class CarDeveloperThread extends Thread {
 
-    private final long DELAY_CAR_DEVELOP = 100;
-    private final int MAXNUMCAR = 6;
+    private static final long DELAY_CAR_DEVELOP = 100;
+    private static final int MAXNUM_CAR = 6;
 
-    Store store;
+    private Store store;
     //ReentrantLock locker;
 
     CarDeveloperThread(Store store) {
@@ -11,7 +11,7 @@ public class CarDeveloperThread extends Thread {
     }
 
     public void run() {
-        for (int i = 1; i < MAXNUMCAR; i++) {
+        for (int i = 1; i < MAXNUM_CAR; i++) {
             store.put();
             try {
                 Thread.sleep(DELAY_CAR_DEVELOP);

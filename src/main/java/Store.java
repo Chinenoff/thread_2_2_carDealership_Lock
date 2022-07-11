@@ -4,10 +4,10 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class Store {
 
-    private final int SIZECARSHOP = 3;
+    private static final int SIZE_CAR_SHOP = 3;
     private int product = 0;
-    final Lock lock = new ReentrantLock();
-    final Condition condition = lock.newCondition();
+    private final Lock lock = new ReentrantLock();
+    private final Condition condition = lock.newCondition();
 
     //метод покупки авто
     public void get(int idBayer) {
@@ -31,7 +31,7 @@ public class Store {
     public synchronized void put() {
         try {
             lock.lock();
-            while (product >= SIZECARSHOP) {
+            while (product >= SIZE_CAR_SHOP) {
                 condition.wait();
             }
             product++;

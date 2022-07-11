@@ -2,7 +2,7 @@ public class CarBuyerThread extends Thread {
 
     private final int idBayer;
 
-    Store store;
+    private Store store;
 
     CarBuyerThread(Store store, int idBayer) {
         this.store = store;

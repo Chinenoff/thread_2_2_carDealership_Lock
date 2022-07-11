@@ -1,6 +1,6 @@
 public class Main {
 
-    private static final int NUMBERBAYER = 4;
+    private static final int NUMBER_BAYER = 4;
     private static final int DELAY_CAR_BAYER = 45;
 
     public static void main(String[] args) throws Exception {
@@ -8,7 +8,7 @@ public class Main {
         Store store = new Store();
 
         //генерируем покупателей
-        for (int i = 1; i <= NUMBERBAYER; i++) {
+        for (int i = 1; i <= NUMBER_BAYER; i++) {
             CarBuyerThread carBuyerThread = new CarBuyerThread(store, i);
             System.out.println("Покупатель " + i + " зашел в автосалон");
             carBuyerThread.start();
